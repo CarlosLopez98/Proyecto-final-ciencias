@@ -1,0 +1,3 @@
+1|Norte 1|Calle 130-11|Chicó|Eduardo Gaviria
+2|Centro|Carrera 7-26|Chápinero|Gonzalo Durán
+3|Norte 2|Calle 128-100|Rosales|Iván Suarez
