@@ -1,0 +1,2 @@
+1|Carlos|Lopez|CC|123456789|M|3009876543|8097654|carlos@mail.com|18-07-1998|Bogota|Colombia|Bogota|Calle_123|Barrio_1|Ingenieria|N|0|1
+2|Brayan|Lopez|CC|987654321|M|3190987654|6548934|brayan@mail.com|29-03-1997|Bogota|Colombia|Bogota|Calle_567|Barrio_2|Ingenieria|N|0|1

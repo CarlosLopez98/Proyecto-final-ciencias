@@ -2,6 +2,13 @@ using namespace std;
 
 class Sucursal {
 	private:
+		struct nodo{
+			string nombre;
+			string direccion;
+			string barrio;
+			string nombre_gerente;	
+		};
+
 		string nombre;
 		string direccion;
 		string barrio;
