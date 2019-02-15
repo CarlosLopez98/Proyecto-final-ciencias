@@ -11,13 +11,13 @@ class MenuRegistro {
 		MenuRegistro();
 		~MenuRegistro();
 
-		void mostrar();
-}
+		static void mostrar(string&, string&);
+};
 
-MenuRegistro::MenuRegistro();
-MenuRegistro::~MenuRegistro();
+MenuRegistro::MenuRegistro(){}
+MenuRegistro::~MenuRegistro(){}
 
-void MenuRegistro::mostrar(){
+void MenuRegistro::mostrar(string& controlador, string& accion){
 	Header::mostrar();
 
 	cout << "Formulario de registro\n" << endl;
@@ -25,6 +25,13 @@ void MenuRegistro::mostrar(){
 	cout << "Nombre: ";
 	string nombre;
 	cin >> nombre;
+
+	cout << "Apellido: ";
+	string apellido;
+	cin >> apellido;
+
+	controlador = "general";
+	accion = "menuRegistro";
 
 }
 

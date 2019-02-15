@@ -1,0 +1,30 @@
+id|nombre|apellido|tipoIdentificacion|numeroIdentificacion|sexo|telefonoCelular|telefonoFijo|e-mail|fechaNacimiento|CiudadNacimiento|paisNacimiento|ciudadResidencia|direccion|barrio|actividadlaboral|numeroHijos|nombre|sucursal
+Pepe	Perez	CC	1030671250	M	3214170999	N/A	1/11/1990	Bogota	Colombia	Bogota			Ingeniero	0	
+Jared	Padalecki	CE	2314027042	M	1211852251	435534	31/12/2000	Lebano	EEUU					4	
+Jensen 	Ackles	CE	1470556020	M	1394083500	795909	15/10/1991	Springfield	EEUU					8	
+Sandra	Gomez	CC	6165794576	F	3326101300	214177	18/05/1995	Medellin	Colombia					5	
+Milena	Fierro	TI	8144675964	F	4038854411	589997	8/02/1994	Bogota	Colombia					5	
+Camilo	Torres	CC	5080641397	M	2672131302	276101	14/04/2000	Cali	Colombia					4	
+Layla	Rojas	CC	4055401531	F	7053098917	372275	19/06/1992	Buenos Aires	Argentina					7	
+Lorena	Osorio	CC	4972901267	F	2418652067	713607	16/06/1996	Bogota	Colombia					7	
+Karen	Florez	CC	8159403191	F	5240736843	721380	9/05/1999	Bogota	Colombia					5	
+Melisa	Herrera	CC	6947705003	F	1034000856	384656	28/10/1995	Bogota	Colombia					0	
+Wilmar	Pereira	CC	6388159187	M	4541317507	368528	17/06/1994	Bogota	Colombia					5	
+Carlos	Guevara	TI	2508026971	M	3908446178	249908	1/03/1997	Bogota	Colombia					5	
+Daisy	Pacheco	TI	8522962221	F	2296590276	491048	17/01/1996	Bogota	Colombia					1	
+Gabriel	Alvarado	CC	4236579656	M	3930497528	133052	28/11/1991	Bogota	Colombia					7	
+Ernesto	Reryero	CE	1979902621	M	3334974255	683840	4/05/1994	Caracas	Venezuela					0	
+Juan	Diaz	CC	1561585366	M	8135644148	518681	5/01/1999	Bogota	Colombia					9	
+Felipe	Garcia	CC	8935563054	M	8458211651	897623	11/04/2000	Madrid	España					7	
+Jaime	Wayne	CE	4467954425	M	8998497277	444373	27/11/1999	Santiago	Chile					2	
+Lida	Toriyama	CE	6743619547	F	4314334731	871601	26/04/1998	Bogota	Colombia					3	
+Daniel	Velandia	CC	3781457175	M	2880078294	718538	18/02/2000	Bogota	Colombia					3	
+Ilonka	Obilinovich	CE	7152006062	F	5310378193	293128	18/12/1996	Antofagasta	Chile					0	
+Mary	Winstead	CE	7395229701	F	2408489441	581718	16/01/1994	Lima	Peru					0	
+Elizabeth	Olsen	CE	6615458763	F	4800374335	198592	29/09/1997	Quito	Ecuador					1	
+Susan	Ramirez	CC	2628930899	F	1268962276	565358	12/05/1999	Bogota	Colombia					1	
+Stefany	Triana	CC	7874190111	F	3341387646	772273	17/09/1999	Bogota	Colombia					1	
+Mario	Castañeda	CE	5082891668	M	2810389360	714798	2/12/1998	D.F	Mexico					2	
+Roberto	Dolores	CC	1462425732	M	3912722560	402139	14/05/1997	D.F	Mexico					4	
+Griselda	Llanos	CC	7305490295	M	3285536094	546693	19/05/2000	Risaralda	Colombia					9	
+Jaimico	Colores	CC	7492001027	M	1136566491	816514	18/02/1995	Melgar	Colombia					8	

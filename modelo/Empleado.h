@@ -1,5 +1,12 @@
 using namespace std;
 
+template<class T>
+struct nodo{
+	T dato;
+	int izq;
+	int der;
+};
+
 class Empleado {
 
 	private:

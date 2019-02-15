@@ -1,3 +1,3 @@
-1|Norte_1|Calle_130-11|Chicó|1
-2|Centro|Carrera 7-26|Chápinero|1
-3|Norte_2|Calle_128-100|Rosales|1
+1 | Norte_1 | Calle_130-11 | Chicó | 1
+2 | Centro | Carrera_7-26 | Chápinero | 1
+3 | Norte_2 | Calle_128-100 | Rosales | 1

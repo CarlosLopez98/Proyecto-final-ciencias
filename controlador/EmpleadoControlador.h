@@ -1,5 +1,6 @@
 #include"../modelo/Empleado.h"
 #include"../vista/empleado/MenuEmpleado.h"
+#include"../vista/empleado/MenuRegistro.h"
 
 #ifndef EMPLEADOCONTROLADOR_H
 #define EMPLEADOCONTROLADOR_H
@@ -27,7 +28,7 @@ void EmpleadoControlador::menu(string& controlador, string& accion){
 }
 
 void EmpleadoControlador::menuRegistro(string& controlador, string& accion){
-
+	MenuRegistro::mostrar(controlador, accion);
 }
 
 #endif
