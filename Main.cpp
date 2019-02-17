@@ -39,15 +39,8 @@ int main(int argc, char *argv[ ], char *envp[ ]){
 	}
 
 
-	DB empleados("datos/Sucursales.txt");
+	DB empleados("Hijos.txt");
 	string **datos = empleados.leer_todo();
-
-	for(int i=0; i<empleados.getNumLineas(); i++){
-		for(int j=0; j<empleados.getNumCampos(); j++){
-			cout << datos[i][j] << " ";
-		}
-		cout << endl;
-	}
 
 	return 0;
 }

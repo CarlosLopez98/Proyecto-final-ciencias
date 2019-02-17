@@ -27,7 +27,7 @@ class DB {
 };
 
 DB::DB(string nombre){
-	this->nombre = nombre;
+	this->nombre = "datos/" + nombre;
 	this->filas = this->getNumLineas();
 	this->columnas = this->getNumCampos(); 
 }
@@ -124,6 +124,7 @@ int DB::getNumLineas(){
 
 int DB::getNumCampos(){
 	string campo;
+	string linea;
 
 	this->lectura.open(this->nombre.c_str(), ios::in);
 
