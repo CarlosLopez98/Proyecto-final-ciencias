@@ -31,15 +31,15 @@ Datos de la sucursal:
 
 Para evitar que la solicitud de información se haga demasiado grande, el programa debe estar en capacidad de calcular la edad de cada una de las personas encuestadas.  
 
-##Estructura de datos:
+## Estructura de datos:
 
-###En memoria secundaria:
+### En memoria secundaria:
 
 La información deberá estar almacenada, de manera permanente, en archivos los cuales deben ser actualizados al final del día o en su defecto al terminar la utilización del programa. Debe tenerse la posibilidad de modificar la información ya sea agregando, eliminando o cambiando registros.  
 
 Existen por lo menos los archivos planos para los empleados y  las sucursales.  
 
-###En memoria Principal:
+### En memoria Principal:
 
 Con el fin de optimizar las búsquedas deberán utilizarse listas, multilistas, arreglos, pilas, colas o árboles en memoria principal y para la realización de dichas búsquedas, deberá evitarse la utilización total de la información. Es decir se espera que apliquen los criterios y conocimientos correspondientes a la eficiencia de los algoritmos. Complejidad en tiempo y memoria. En cuanto a listas se dan ejemplos de la forma como se pueden estructurar:  
 
@@ -102,7 +102,7 @@ Nombre 4
 - - - -
 
 
-##Consultas
+## Consultas
 
 El programa debe permitir a los miembros de la comunidad religiosa obtener la siguiente información:  
 
@@ -138,7 +138,7 @@ Debe aplicar los conceptos de optimización estudiados en el curso. No limitarse
 
 Al finalizar el programa se actualizan los archivos incluyendo los cambios realizados durante la ejecución. Se agregaron o retiraron feligreses.  
 
-##Condiciones de entrega
+## Condiciones de entrega
 
 1.	Se puede elaborar en grupos de por lo menos dos y máximo tres personas (Es un trabajo en grupo). Se sustentará individualmente.
 2.	Se entrega a través de aula virtual una carpeta comprimida con: código fuente, ejecutable, archivos planos y documento soporte. Sencillo manual para ejecución (si se requiere). 
@@ -149,4 +149,4 @@ Al finalizar el programa se actualizan los archivos incluyendo los cambios reali
 
 
 
-####Docente: Deicy Alvarado.
+#### Docente: Deicy Alvarado.
