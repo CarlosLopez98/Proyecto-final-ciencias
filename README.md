@@ -45,8 +45,8 @@ Con el fin de optimizar las búsquedas deberán utilizarse listas, multilistas, 
 
 Nodo Feligreses:
 
-| Los campos con la información de cada miembro de la comunidad |
-| -- |
+| Los campos con la información de cada miembro de la comunidad | | | | |
+| -- | -- | -- | -- | -- |
 | sigPorSexo | sigPorLocalidad | sigPorActividad Laboral | sigPorLocalidad | sigPorNumeroDeHijos |
 
 
