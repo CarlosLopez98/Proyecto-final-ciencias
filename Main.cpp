@@ -5,16 +5,18 @@
 #include"controlador/EmpleadoControlador.h"
 #include"controlador/SucursalControlador.h"
 #include"controlador/ControladorGeneral.h"
-#include"datos/DB.h"
 
 using namespace std;
 
 int main(int argc, char *argv[ ], char *envp[ ]){
 
+	// Cargar informacion en las estructuras
+
+
 	string controlador = "general";
 	string accion = "menuPrincipal";
 
-	while(controlador == "" && accion != ""){
+	while(controlador != "" && accion != ""){
 		if(controlador == "general"){
 			ControladorGeneral con;
 
@@ -37,10 +39,6 @@ int main(int argc, char *argv[ ], char *envp[ ]){
 			accion = "menuPrincipal";
 		}
 	}
-
-
-	DB empleados("Hijos.txt");
-	string **datos = empleados.leer_todo();
 
 	return 0;
 }

@@ -1,4 +1,7 @@
-using namespace std;
+#include"../modelo/Sucursal.h"
+
+#ifndef SUCURSALCONTROLADOR_H
+#define SUCURSALCONTROLADOR_H
 
 class SucursalControlador {
 
@@ -10,3 +13,5 @@ class SucursalControlador {
 
 SucursalControlador::SucursalControlador(){}
 SucursalControlador::~SucursalControlador(){}
+
+#endif

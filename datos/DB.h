@@ -3,8 +3,6 @@
 #ifndef DB_H
 #define DB_H
 
-using namespace std;
-
 class DB {
 
 	private:
@@ -12,27 +10,31 @@ class DB {
 		ofstream escritura;
 		ifstream lectura;
 
-		int columnas;
-		int filas;
 
 	public:
-		DB(string);
+		DB();
 		~DB();
 
+		void setArchivo(string);
 		bool escribir(string);
 		string** leer_todo();
 		string* leer(int);
 		int getNumLineas();
 		int getNumCampos();
+
+		int columnas;
+		int filas;
 };
 
-DB::DB(string nombre){
-	this->nombre = "datos/" + nombre;
-	this->filas = this->getNumLineas();
-	this->columnas = this->getNumCampos(); 
-}
+DB::DB(){}
 
 DB::~DB(){}
+
+void DB::setArchivo(string nombre){
+	this->nombre = "datos/" + nombre;
+	this->filas = this->getNumLineas();
+	this->columnas = this->getNumCampos();	
+}
 
 bool DB::escribir(string linea){
 	this->escritura.open(this->nombre.c_str(), ios::app);

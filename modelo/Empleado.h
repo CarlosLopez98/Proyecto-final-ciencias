@@ -1,3 +1,6 @@
+#ifndef EMPLEADO_H
+#define EMPLEADO_H
+
 using namespace std;
 
 template<class T>
@@ -49,3 +52,5 @@ Empleado::Empleado(){
 Empleado::~Empleado(){
 
 }
+
+#endif

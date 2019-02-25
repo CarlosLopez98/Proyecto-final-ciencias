@@ -6,7 +6,7 @@
 class Empresa {
 
 	private:
-		Lista<Sucursal> sucursales;
+		
 
 	public:
 		Empresa();
@@ -15,7 +15,8 @@ class Empresa {
 };
 
 Empresa::Empresa(){
-	sucursales = new Lista<Sucursal>;
+	cabSucursal = new int[4];
+	sucursales = 
 }
 
 #endif
