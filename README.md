@@ -43,62 +43,6 @@ Existen por lo menos los archivos planos para los empleados y  las sucursales.
 
 Con el fin de optimizar las búsquedas deberán utilizarse listas, multilistas, arreglos, pilas, colas o árboles en memoria principal y para la realización de dichas búsquedas, deberá evitarse la utilización total de la información. Es decir se espera que apliquen los criterios y conocimientos correspondientes a la eficiencia de los algoritmos. Complejidad en tiempo y memoria. En cuanto a listas se dan ejemplos de la forma como se pueden estructurar:  
 
-Nodo Feligreses:
-
-| Los campos con la información de cada miembro de la comunidad |  
-| -- | -- | -- | -- | -- |
-| sigPorSexo | sigPorLocalidad | sigPorActividad Laboral | sigPorLocalidad | sigPorNumeroDeHijos |
-
-
-Las cabezas de las listas que se deben crear son: 
-
-Cabezas de Lista
-
-CabezaPorSexo
-
-CabezaPorEdad
-masculino
-femenino
-
-18 a 24
-25 a 35
-36 a 45
-45 a 60
-Mas de 60
-
-
-CabezaPorActividadLaboral
-Artes
-técnico
-Ingeniero
-Sociales
-Salud
-- - -
-
-
-CabezaPorNúmeroDeHijos
-
-cabezaPorLocalidad
-Sin hijo
-1-2
-3-4
-Mas de 4
-
-Nombre1
-Nombre 2
-Nombre 3
-Nombre 4 
-- - - -
-
-
-cabezaPorIglesia
-Nombre1
-Nombre 2
-Nombre 3
-Nombre 4 
-- - - -
-
-
 ## Consultas
 
 El programa debe permitir a los miembros de la comunidad religiosa obtener la siguiente información:  
