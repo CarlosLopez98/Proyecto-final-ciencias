@@ -59,7 +59,7 @@ El programa debe permitir a los miembros de la comunidad religiosa obtener la si
 
 6. Dado un rango de edad y una actividad laborar mostrar la lista de trabajadores de esa edad, clasificados por barrio y sucursal a la que pertenecen.  
 
-##Requisitos funcionales:
+## Requisitos funcionales:
 
 Con el fin de optimizar las búsquedas deberán utilizarse listas y la multilista definida. Las cuales se construyen al iniciar el programa y a partir de la información almacenada en los archivos.  
 
