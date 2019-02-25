@@ -3,31 +3,31 @@ Proyecto final de Ciencias de la computación
 
 ## Problema
 Una empresa desea recoger información acerca de sus empleados con el fin de hallar perfiles que les permitan enfocar el desarrollo de las labores de manera más eficiente.  Para ello, los gerentes ordenan la elaboración de formularios que son entregados en cada una de las sucursales ubicadas a lo largo y ancho del país (puede haber más de una sucursal en la misma ciudad). La información que se debe consignar allí es la siguiente:  
--Nombre  
--Apellido  
--Tipo de identificación: puede ser uno de los siguientes valores: Cédula de ciudadanía, cédula de extranjería o tarjeta de identidad.  
--Número de identificación  
--Sexo: F o M  
--Teléfono celular  
--Teléfono fijo  
--e-mail  
--Fecha de Nacimiento  
--Ciudad de Nacimiento  
--País de Nacimiento  
--Ciudad de Residencia  
--Dirección  
--Barrio  
--Actividad laboral: Artes, ciencias sociales, ingenierías, áreas de la salud, otros  
--Tiene hijos?: como respuesta se acepta S ó N  
--Número de hijos  
--Listado con el nombre y fecha de nacimiento de cada uno de los hijos: 0-5, 6-10, 11-15, mayor de 16  
--Nombre de la sucursal en la que trabaja  
+- Nombre  
+- Apellido  
+- Tipo de identificación: puede ser uno de los siguientes valores: Cédula de ciudadanía, cédula de extranjería o tarjeta de identidad.  
+- Número de identificación  
+- Sexo: F o M  
+- Teléfono celular  
+- Teléfono fijo  
+- e-mail  
+- Fecha de Nacimiento  
+- Ciudad de Nacimiento  
+- País de Nacimiento  
+- Ciudad de Residencia  
+- Dirección  
+- Barrio  
+- Actividad laboral: Artes, ciencias sociales, ingenierías, áreas de la salud, otros  
+- Tiene hijos?: como respuesta se acepta S ó N  
+- Número de hijos  
+- Listado con el nombre y fecha de nacimiento de cada uno de los hijos: 0-5, 6-10, 11-15, mayor de 16  
+- Nombre de la sucursal en la que trabaja  
 
 Datos de la sucursal:  
--Nombre de la sucursal  
--Dirección de la sucursal  
--Barrio  
--Nombre del gerente de la sucursal.  
+- Nombre de la sucursal  
+- Dirección de la sucursal  
+- Barrio  
+- Nombre del gerente de la sucursal.  
 
 Para evitar que la solicitud de información se haga demasiado grande, el programa debe estar en capacidad de calcular la edad de cada una de las personas encuestadas.  
 
