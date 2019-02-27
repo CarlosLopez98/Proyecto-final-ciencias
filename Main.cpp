@@ -1,10 +1,12 @@
 #include<cstdlib>
 #include<iostream>
+#include<string.h>
 
 // Controladores
 #include"controlador/EmpleadoControlador.h"
 #include"controlador/SucursalControlador.h"
 #include"controlador/ControladorGeneral.h"
+//#include"modelo/Sucursal.h"
 
 using namespace std;
 
@@ -12,11 +14,10 @@ int main(int argc, char *argv[ ], char *envp[ ]){
 
 	// Cargar informacion en las estructuras
 
-
 	string controlador = "general";
 	string accion = "menuPrincipal";
 
-	while(controlador != "" && accion != ""){
+	while(controlador == "" && accion != ""){
 		if(controlador == "general"){
 			ControladorGeneral con;
 
