@@ -45,7 +45,7 @@ class Sucursal {
 		void borrarSucursal(int);
 		bool vacia();
 		bool llena();
-		char* obtenerElemento(int, int);
+		string* obtenerRegistro(int);
 
 		string** getDatos();
 
