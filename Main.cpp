@@ -17,8 +17,8 @@ using namespace std;
 int main(int argc, char *argv[ ], char *envp[ ]){
 
 	// Cargar informacion en las estructuras
-	Empresa miEmpresa;
-	miEmpresa.cargarDatos();
+	//Empresa miEmpresa;
+	//miEmpresa.cargarDatos();
 
 	string controlador = "general";
 	string accion = "menuPrincipal";
