@@ -29,3 +29,10 @@ Id | Nombre | Apellido | Tipo_identificaciÃ³n | IdentificaciÃ³n | Sexo | Celular
 28 | Griselda | Llanos | CC | 4342660513 | F | 3382911672 | 4009796 | GriseldaLlanos@mail.com | 12/4/1971 | Bogota | Colombia | Bogota | Calle_38#137 | Barrio_6 | Artes | N | 0 | 0 | 9
 29 | Jaimico | Colores | CC | 2745747255 | M | 3349678665 | 8516833 | JaimicoColores@mail.com | 6/10/1984 | Cali | Colombia | Cali | Carrera_69#69 | Barrio_9 | Artes | N | 0 | 0 | 4
 30 | Julian | Lurdes | TI | 1928417016 | M | 3631569636 | 1244703 | JulianLurdes@mail.com | 30/7/2000 | Cali | Colombia | Medellin | Carrera_24#76 | Barrio_2 | Ingeniero | S | 2 | 24 | 9
+31 | Pedro | Rodriguez | CC | 98765432 | M | 3006009000 | 4785623 | Pedro@ccom.com | 5/6/1960 | Madrid | España | Medellin | Gran_via_26 | Prado | Artes | S | 3 | 25 | 1
+32 | Ana | Ramirez | CE | 98765432 | F | 3006009000 | 4785623 | ana@ccom.com | 29/6/1997 | Madrid | España | Cali | Cl_5-36-25 | Lido | Ciencias_sociales | S | 1 | 28 | 2
+33 | Maria | Moliner | TI | 1010106332 | F | 3006009000 | 4785623 | maria@ccom.com | 15/11/1995 | Barcelona | España | Barranquilla | Paseo_maritimo_15 | Villa_olimpica | Ingenieria | N | 0 | 0 | 3
+34 | Luis | Lopez | CC | 56824973 | M | 3006009000 | 4785623 | luis@ccom.com | 4/7/1980 | Bogota | Colombia | Bogota | Cra_5_72-00 | Rosales | Salud | S | 2 | 29 | 4
+35 | Juan | Perez | CC | 3019326600 | M | 3006009000 | 4785623 | juan@ccom.com |22/3/1970 | Bogota | Colombia | Bogota | Cra_6_60-32 | La_salle | Otro | S | 2 | 30 | 4
+36 | Margarita | Lopez | CE | 76543256 | F | 3006009000 | 4785623 | marga@ccom.com | 9/1/1973 | Bogota | Colombia | Barranquilla | Rambla_42 | Marina_Village | Ciencias_sociales | S | 1 | 32 | 3
+37 | Sara | Connor | TI | 1210123623 | F | 3156009000 | 4785623 | sara@ccom.com | 5/5/1998 | Cali | Colombia | Cali | Cra_39_3-20 | San_Fernando | Ingenieria | N | 0 | 0 | 2
