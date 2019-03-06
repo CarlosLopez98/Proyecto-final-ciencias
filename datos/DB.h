@@ -3,6 +3,8 @@
 #ifndef DB_H
 #define DB_H
 
+using namespace std;
+
 class DB {
 
 	private:

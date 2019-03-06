@@ -110,7 +110,7 @@ class Empleado {
 	int *cabezaHijos;
 	int *cabezaSucursales;
 
-	datos **arregloSucursales;
+	datos **arregloEmpleados;
 
 	int tam;
 	int posAct;
@@ -123,9 +123,26 @@ class Empleado {
 		~Empleado();
 		
 		void insertarNombre(string);
-		void insertarDireccion(string);
+		void insertarApellido(string);
+
+		void insertarTipo_id(string);
+		void insertarNum_id(int);
+
+		void insertarSexo(char);
+
+		void insertarEmail(string);
+		void insertarFecha_nacimiento(string);
+		void insertarEdad(int);
+		void insertarCiudad_nacimiento(string);
+		void insertarPais_nacimiento(string);
+		void insertarCiudad(string);
 		void insertarBarrio(string);
-		void insertarNombre_gerente(string);
+
+		void insertarActividad(string);
+
+		void insertarHijo(string**);
+
+		void insertarSucursal(string);
 
 		bool insertarEmpleado(string*);
 		void borrarEmpleado(int);
@@ -142,7 +159,7 @@ class Empleado {
 			return arreglo;
 		}
 
-		void imprimir(){
+		/*void imprimir(){
 			for(int i=0; i<posAct; i++){
 				cout << i << " ";
 				cout << arregloSucursales[i]->nombre << " ";
@@ -155,7 +172,7 @@ class Empleado {
 				cout << arregloSucursales[i]->sigNombre_gerente << " ";
 				cout << endl;
 			}
-		}
+		}*/
 };
 
 Empleado::Empleado(){
@@ -191,7 +208,7 @@ Empleado::Empleado(){
 	cabecera->apellido = "zz";
 	cabecera->tipo_id = "CC";
 	cabecera->num_id = 0;
-	cabecera->sexo = "M";
+	cabecera->sexo = 'M';
 	cabecera->email = "zz";
 	cabecera->fecha_naci = "00/00/0000";
 	cabecera->edad = 0;
@@ -221,7 +238,6 @@ Empleado::Empleado(){
 	cabecera->sigNum_hijos = -1;
 	cabecera->hijos = 0;
 	cabecera->sigSucursal = -1;
-	cabecera->sigNombre_gerente = -1;
 	
 	arregloEmpleados[0] = cabecera; // se inserta en el arreglo
 	
@@ -246,17 +262,16 @@ bool Empleado::insertarEmpleado(string *registro){
 	nuevo->nombre = registro[0];
 	nuevo->direccion = registro[1];
 	nuevo->barrio = registro[2];
-	nuevo->nombre_gerente = registro[3];
 
 	if(!llena()){
 
-		arregloSucursales[posAct] = new datos;
-		arregloSucursales[posAct] = nuevo;
+		arregloEmpleados[posAct] = new datos;
+		arregloEmpleados[posAct] = nuevo;
 
-		insertarNombre(nuevo->nombre);
+		/*insertarNombre(nuevo->nombre);
 		insertarDireccion(nuevo->direccion);
 		insertarBarrio(nuevo->barrio);
-		insertarNombre_gerente(nuevo->nombre_gerente);
+		insertarNombre_gerente(nuevo->nombre_gerente);*/
 
 		posAct++;
 		return true;
@@ -267,81 +282,330 @@ bool Empleado::insertarEmpleado(string *registro){
 
 void Empleado::insertarNombre(string nombre){
 	int ant = 0; // posicion anterior a la nueva
-	int sig = arregloCabezas[0]; // posicion siguiente a la nueva
+	int sig = cabezaNombre[0]; // posicion siguiente a la nueva
 	bool pri = true; 
 	
-	while(nombre > arregloSucursales[sig]->nombre){
+	while(nombre > arregloEmpleados[sig]->nombre){
 		ant = sig;
-		sig = arregloSucursales[sig]->sigNombre;
+		sig = arregloEmpleados[sig]->sigNombre;
 		pri = false;
 	}
 	
-	arregloSucursales[posAct]->sigNombre = sig;
+	arregloEmpleados[posAct]->sigNombre = sig;
 	
 	if(pri){		
-		arregloCabezas[0] = posAct;
+		cabezaNombre[0] = posAct;
 	}else{
-		arregloSucursales[ant]->sigNombre = posAct;
+		arregloEmpleados[ant]->sigNombre = posAct;
 	}
 }
 
-void Empleado::insertarDireccion(string direccion){
+void Empleado::insertarApellido(string apellido){
 	int ant = 0; // posicion anterior a la nueva
-	int sig = arregloCabezas[1]; // posicion siguiente a la nueva
+	int sig = cabezaNombre[1]; // posicion siguiente a la nueva
 	bool pri = true; 
 	
-	while(direccion > arregloSucursales[sig]->direccion){
+	while(apellido > arregloEmpleados[sig]->apellido){
 		ant = sig;
-		sig = arregloSucursales[sig]->sigDireccion;
+		sig = arregloEmpleados[sig]->sigApellido;
 		pri = false;
 	}
 	
-	arregloSucursales[posAct]->sigDireccion = sig;
+	arregloEmpleados[posAct]->sigApellido = sig;
 	
 	if(pri){		
-		arregloCabezas[1] = posAct;
+		cabezaNombre[1] = posAct;
 	}else{
-		arregloSucursales[ant]->sigDireccion = posAct;
+		arregloEmpleados[ant]->sigApellido = posAct;
+	}
+}
+
+void Empleado::insertarTipo_id(string tipo_id){
+	int pos_tipo;
+	if(tipo_id == "CC"){
+		pos_tipo = 0;
+	}else if(tipo_id == "CE"){
+		pos_tipo = 1;
+	}else{
+		pos_tipo = 2;
+	}
+
+	int ant = 0; // posicion anterior a la nueva
+	int sig = cabezaId[pos_tipo]; // posicion siguiente a la nueva
+
+	if(sig == 0){
+		cabezaId[pos_tipo] = posAct;
+		arregloEmpleados[posAct]->sigTipo_id = 0;
+	}else{
+		while(sig != 0){
+			ant = sig;
+			sig = arregloEmpleados[sig]->sigTipo_id;
+		}
+
+		arregloEmpleados[ant]->sigTipo_id = posAct;
+		arregloEmpleados[posAct]->sigTipo_id = 0;
+	}
+
+}
+
+void Empleado::insertarNum_id(int num_id){
+	int ant = 0; // posicion anterior a la nueva
+	int sig = cabezaId[3]; // posicion siguiente a la nueva
+	bool pri = true;
+	
+	while(num_id > arregloEmpleados[sig]->num_id){
+		ant = sig;
+		sig = arregloEmpleados[sig]->sigNum_id;
+		pri = false;
+	}
+	
+	arregloEmpleados[posAct]->sigNum_id = sig;
+	
+	if(pri){		
+		cabezaId[3] = posAct;
+	}else{
+		arregloEmpleados[ant]->sigNum_id = posAct;
+	}
+}
+
+void Empleado::insertarSexo(char sexo){
+	int pos_sexo;
+	if(sexo == 'M'){
+		pos_sexo = 0;
+	}else if(sexo == 'F'){
+		pos_sexo = 1;
+	}
+
+	int ant = 0; // posicion anterior a la nueva
+	int sig = cabezaSexo[pos_sexo]; // posicion siguiente a la nueva
+
+	if(sig == 0){
+		cabezaSexo[pos_sexo] = posAct;
+		arregloEmpleados[posAct]->sigSexo = 0;
+	}else{
+		while(sig != 0){
+			ant = sig;
+			sig = arregloEmpleados[sig]->sigSexo;
+		}
+
+		arregloEmpleados[ant]->sigSexo = posAct;
+		arregloEmpleados[posAct]->sigSexo = 0;
+	}
+
+}
+
+void Empleado::insertarEmail(string email){
+	int ant = 0; // posicion anterior a la nueva
+	int sig = cabezaInformacion[0]; // posicion siguiente a la nueva
+	bool pri = true; 
+	
+	while(email > arregloEmpleados[sig]->email){
+		ant = sig;
+		sig = arregloEmpleados[sig]->sigEmail;
+		pri = false;
+	}
+	
+	arregloEmpleados[posAct]->sigEmail = sig;
+	
+	if(pri){		
+		cabezaInformacion[0] = posAct;
+	}else{
+		arregloEmpleados[ant]->sigEmail = posAct;
+	}
+}
+
+void Empleado::insertarFecha_nacimiento(string fecha_nacimiento){
+	int ant = 0; // posicion anterior a la nueva
+	int sig = cabezaInformacion[1]; // posicion siguiente a la nueva
+	bool pri = true; 
+	
+	while(fecha_nacimiento > arregloEmpleados[sig]->fecha_naci){
+		ant = sig;
+		sig = arregloEmpleados[sig]->sigFecha_naci;
+		pri = false;
+	}
+	
+	arregloEmpleados[posAct]->sigFecha_naci = sig;
+	
+	if(pri){		
+		cabezaInformacion[1] = posAct;
+	}else{
+		arregloEmpleados[ant]->sigFecha_naci = posAct;
+	}
+}
+
+void Empleado::insertarEdad(int edad){
+	int ant = 0; // posicion anterior a la nueva
+	int sig = cabezaInformacion[2]; // posicion siguiente a la nueva
+	bool pri = true; 
+	
+	while(edad > arregloEmpleados[sig]->edad){
+		ant = sig;
+		sig = arregloEmpleados[sig]->sigEdad;
+		pri = false;
+	}
+	
+	arregloEmpleados[posAct]->sigEdad = sig;
+	
+	if(pri){
+		cabezaInformacion[2] = posAct;
+	}else{
+		arregloEmpleados[ant]->sigEdad = posAct;
+	}
+}
+
+void Empleado::insertarCiudad_nacimiento(string ciudad_naci){
+	int ant = 0; // posicion anterior a la nueva
+	int sig = cabezaInformacion[3]; // posicion siguiente a la nueva
+	bool pri = true;
+	
+	while(ciudad_naci > arregloEmpleados[sig]->ciudad_naci){
+		ant = sig;
+		sig = arregloEmpleados[sig]->sigCiudad_naci;
+		pri = false;
+	}
+	
+	arregloEmpleados[posAct]->sigCiudad_naci = sig;
+	
+	if(pri){		
+		cabezaInformacion[3] = posAct;
+	}else{
+		arregloEmpleados[ant]->sigCiudad_naci = posAct;
+	}
+}
+
+void Empleado::insertarPais_nacimiento(string pais_naci){
+	int ant = 0; // posicion anterior a la nueva
+	int sig = cabezaInformacion[4]; // posicion siguiente a la nueva
+	bool pri = true; 
+	
+	while(pais_naci > arregloEmpleados[sig]->pais_naci){
+		ant = sig;
+		sig = arregloEmpleados[sig]->sigPais_naci;
+		pri = false;
+	}
+	
+	arregloEmpleados[posAct]->sigPais_naci = sig;
+	
+	if(pri){		
+		cabezaInformacion[4] = posAct;
+	}else{
+		arregloEmpleados[ant]->sigPais_naci = posAct;
+	}
+}
+
+void Empleado::insertarCiudad(string ciudad){
+	int ant = 0; // posicion anterior a la nueva
+	int sig = cabezaInformacion[5]; // posicion siguiente a la nueva
+	bool pri = true; 
+	
+	while(ciudad > arregloEmpleados[sig]->ciudad){
+		ant = sig;
+		sig = arregloEmpleados[sig]->sigCiudad;
+		pri = false;
+	}
+	
+	arregloEmpleados[posAct]->sigCiudad = sig;
+	
+	if(pri){		
+		cabezaInformacion[5] = posAct;
+	}else{
+		arregloEmpleados[ant]->sigCiudad = posAct;
 	}
 }
 
 void Empleado::insertarBarrio(string barrio){
 	int ant = 0; // posicion anterior a la nueva
-	int sig = arregloCabezas[2]; // posicion siguiente a la nueva
+	int sig = cabezaInformacion[6]; // posicion siguiente a la nueva
 	bool pri = true; 
 	
-	while(barrio > arregloSucursales[sig]->barrio){
+	while(barrio > arregloEmpleados[sig]->barrio){
 		ant = sig;
-		sig = arregloSucursales[sig]->sigBarrio;
+		sig = arregloEmpleados[sig]->sigBarrio;
 		pri = false;
 	}
 	
-	arregloSucursales[posAct]->sigBarrio = sig;
+	arregloEmpleados[posAct]->sigBarrio = sig;
 	
 	if(pri){		
-		arregloCabezas[2] = posAct;
+		cabezaInformacion[6] = posAct;
 	}else{
-		arregloSucursales[ant]->sigBarrio = posAct;
+		arregloEmpleados[ant]->sigBarrio = posAct;
 	}
 }
 
-void Empleado::insertarNombre_gerente(string nombre_gerente){
-	int ant = 0; // posicion anterior a la nueva
-	int sig = arregloCabezas[3]; // posicion siguiente a la nueva
-	bool pri = true; 
-	
-	while(nombre_gerente > arregloSucursales[sig]->nombre_gerente){
-		ant = sig;
-		sig = arregloSucursales[sig]->sigNombre_gerente;
-		pri = false;
-	}
-	
-	arregloSucursales[posAct]->sigNombre_gerente = sig;
-	
-	if(pri){		
-		arregloCabezas[3] = posAct;
+void Empleado::insertarActividad(string actividad){
+	int pos_actividad;
+	if(actividad == "Ingenieria"){
+		pos_actividad = 0;
+	}else if(actividad == "Ciencias"){
+		pos_actividad = 1;
+	}else if(actividad == "Artes"){
+		pos_actividad = 2;
 	}else{
-		arregloSucursales[ant]->sigNombre_gerente = posAct;
+		pos_actividad = 3;
+	}
+
+	int ant = 0; // posicion anterior a la nueva
+	int sig = cabezaActividad[pos_actividad]; // posicion siguiente a la nueva
+
+	if(sig == 0){
+		cabezaActividad[pos_actividad] = posAct;
+		arregloEmpleados[posAct]->sigActividad = 0;
+	}else{
+		while(sig != 0){
+			ant = sig;
+			sig = arregloEmpleados[sig]->sigActividad;
+		}
+
+		arregloEmpleados[ant]->sigActividad = posAct;
+		arregloEmpleados[posAct]->sigActividad = 0;
+	}
+
+}
+
+void Empleado::insertarHijo(string **hijo){
+
+}
+
+void Empleado::insertarSucursal(string sucursal){
+	int pos_sucursal;
+	if(sucursal == "Sucursal 1"){
+		pos_sucursal = 0;
+	}else if(sucursal == "Sucursal 2"){
+		pos_sucursal = 1;
+	}else if(sucursal == "Sucursal 3"){
+		pos_sucursal = 2;
+	}else if(sucursal == "Sucursal 4"){
+		pos_sucursal = 3;
+	}else if(sucursal == "Sucursal 5"){
+		pos_sucursal = 4;
+	}else if(sucursal == "Sucursal 6"){
+		pos_sucursal = 5;
+	}else if(sucursal == "Sucursal 7"){
+		pos_sucursal = 6;
+	}else if(sucursal == "Sucursal 8"){
+		pos_sucursal = 7;
+	}else if(sucursal == "Sucursal 9"){
+		pos_sucursal = 8;
+	}else{
+		pos_sucursal = 9;
+	}
+
+	int ant = 0; // posicion anterior a la nueva
+	int sig = cabezaSucursales[pos_sucursal]; // posicion siguiente a la nueva
+
+	if(sig == 0){
+		cabezaSucursales[pos_sucursal] = posAct;
+		arregloEmpleados[posAct]->sigSucursal = 0;
+	}else{
+		while(sig != 0){
+			ant = sig;
+			sig = arregloEmpleados[sig]->sigSucursal;
+		}
+
+		arregloEmpleados[ant]->sigSucursal = posAct;
+		arregloEmpleados[posAct]->sigSucursal = 0;
 	}
 }
 
