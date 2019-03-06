@@ -9,7 +9,7 @@ class Empleado {
 		string nombre;
 		string apellido;
 		string tipo_id;
-		int num_id;
+		double num_id;
 		char sexo;
 		int celular;
 		int telefono;
@@ -132,7 +132,7 @@ class Empleado {
 
 		void insertarEmail(string);
 		void insertarFecha_nacimiento(string);
-		void insertarEdad(int);
+		void insertarEdad(double);
 		void insertarCiudad_nacimiento(string);
 		void insertarPais_nacimiento(string);
 		void insertarCiudad(string);
@@ -207,11 +207,11 @@ Empleado::Empleado(){
 	cabecera->nombre = "zz";
 	cabecera->apellido = "zz";
 	cabecera->tipo_id = "CC";
-	cabecera->num_id = 0;
+	cabecera->num_id = 9999999999;
 	cabecera->sexo = 'M';
 	cabecera->email = "zz";
 	cabecera->fecha_naci = "00/00/0000";
-	cabecera->edad = 0;
+	cabecera->edad = 100;
 	cabecera->ciudad_naci = "zz";
 	cabecera->pais_naci = "zz";
 	cabecera->ciudad = "zz";
@@ -434,7 +434,7 @@ void Empleado::insertarFecha_nacimiento(string fecha_nacimiento){
 	}
 }
 
-void Empleado::insertarEdad(int edad){
+void Empleado::insertarEdad(double edad){
 	int ant = 0; // posicion anterior a la nueva
 	int sig = cabezaInformacion[2]; // posicion siguiente a la nueva
 	bool pri = true; 
