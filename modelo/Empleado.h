@@ -257,7 +257,10 @@ string** Empleado::getDatos(){
 	return db.leer_todo();
 }
 
-// Pasar arreglo de tam 4
+/** Este metodo inserta un empleado en la multilista de empleados.
+	@param *registro recibe un arreglo con todos los datos del empleado.
+	@return confirma si el empleado ha sido insertado correctamente o no.
+*/ 
 bool Empleado::insertarEmpleado(string *registro){
 	datos *nuevo = new datos;
 	nuevo->nombre = registro[1];
@@ -314,6 +317,9 @@ bool Empleado::insertarEmpleado(string *registro){
 	return false;
 }
 
+/** Este metodo inserta un nombre en la multilista de empleados.
+	@param nombre es el nombre del empleado.
+*/ 
 void Empleado::insertarNombre(string nombre){
 	int ant = 0; // posicion anterior a la nueva
 	int sig = cabezaNombre[0]; // posicion siguiente a la nueva
@@ -334,6 +340,9 @@ void Empleado::insertarNombre(string nombre){
 	}
 }
 
+/** Este metodo inserta un nombre en la multilista de empleados.
+	@param apellido apellido del empleado.
+*/
 void Empleado::insertarApellido(string apellido){
 	int ant = 0; // posicion anterior a la nueva
 	int sig = cabezaNombre[1]; // posicion siguiente a la nueva
@@ -354,6 +363,9 @@ void Empleado::insertarApellido(string apellido){
 	}
 }
 
+/** Este metodo inserta el tipo de documento en la multilista de empleados.
+	@param id recibe el tipo de documento.
+*/
 void Empleado::insertarTipo_id(string tipo_id){
 	int pos_tipo;
 	if(tipo_id == "CC"){
