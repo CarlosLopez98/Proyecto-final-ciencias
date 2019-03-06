@@ -5,7 +5,7 @@ class Sucursal {
 		string nombre;
 		string direccion;
 		string barrio;
-		string nombre_gerente;
+		int nombre_gerente;
 
 		int sigNombre;
 		int sigDireccion;
@@ -39,7 +39,7 @@ class Sucursal {
 		void insertarNombre(string);
 		void insertarDireccion(string);
 		void insertarBarrio(string);
-		void insertarNombre_gerente(string);
+		void insertarNombre_gerente(int);
 
 		bool insertarSucursal(string*);
 		void borrarSucursal(int);
@@ -85,7 +85,7 @@ Sucursal::Sucursal(){
 	cabecera->nombre = "zz";
 	cabecera->direccion = "zz";
 	cabecera->barrio = "zz";
-	cabecera->nombre_gerente = "zz";
+	cabecera->nombre_gerente = 0;
 	cabecera->sigNombre = -1;
 	cabecera->sigDireccion = -1;
 	cabecera->sigBarrio = -1;
@@ -111,10 +111,10 @@ string** Sucursal::getDatos(){
 // Pasar arreglo de tam 4
 bool Sucursal::insertarSucursal(string *registro){
 	datos *nuevo = new datos;
-	nuevo->nombre = registro[0];
-	nuevo->direccion = registro[1];
-	nuevo->barrio = registro[2];
-	nuevo->nombre_gerente = registro[3];
+	nuevo->nombre = registro[1];
+	nuevo->direccion = registro[2];
+	nuevo->barrio = registro[3];
+	nuevo->nombre_gerente = atoi(registro[4].c_str());
 
 	if(!llena()){
 
@@ -193,7 +193,7 @@ void Sucursal::insertarBarrio(string barrio){
 	}
 }
 
-void Sucursal::insertarNombre_gerente(string nombre_gerente){
+void Sucursal::insertarNombre_gerente(int nombre_gerente){
 	int ant = 0; // posicion anterior a la nueva
 	int sig = arregloCabezas[3]; // posicion siguiente a la nueva
 	bool pri = true; 

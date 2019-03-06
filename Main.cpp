@@ -6,18 +6,24 @@
 #include"controlador/EmpleadoControlador.h"
 #include"controlador/SucursalControlador.h"
 #include"controlador/ControladorGeneral.h"
-//#include"modelo/Sucursal.h"
+#include"modelo/Empresa.h"
+/*#include"modelo/Empleado.h"
+#include"modelo/Sucursal.h"
+#include"modelo/Hijo.h"*/
+
 
 using namespace std;
 
 int main(int argc, char *argv[ ], char *envp[ ]){
 
 	// Cargar informacion en las estructuras
+	Empresa miEmpresa;
+	miEmpresa.cargarDatos();
 
 	string controlador = "general";
 	string accion = "menuPrincipal";
 
-	while(controlador == "" && accion != ""){
+	while(controlador != "" && accion != ""){
 		if(controlador == "general"){
 			ControladorGeneral con;
 

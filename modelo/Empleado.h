@@ -1,4 +1,5 @@
 #include"../datos/DB.h"
+#include"Helper.h"
 
 #ifndef EMPLEADO_H
 #define EMPLEADO_H
@@ -10,7 +11,7 @@ class Empleado {
 		string apellido;
 		string tipo_id;
 		double num_id;
-		char sexo;
+		string sexo;
 		int celular;
 		int telefono;
 		string email;
@@ -22,9 +23,10 @@ class Empleado {
 		string direccion;
 		string barrio;
 		string actividad_lab;
-		char tiene_hijos;
+		string tiene_hijos;
 		int num_hijos;
-		string nom_sucursal;
+		int hijos;
+		int nom_sucursal;
 
 		int sigNombre;
 		int sigApellido;
@@ -46,7 +48,6 @@ class Empleado {
 
 		int sigTiene_hijos;
 		int sigNum_hijos;
-		int hijos;
 
 		int sigSucursal;
 	};
@@ -128,11 +129,11 @@ class Empleado {
 		void insertarTipo_id(string);
 		void insertarNum_id(int);
 
-		void insertarSexo(char);
+		void insertarSexo(string);
 
 		void insertarEmail(string);
 		void insertarFecha_nacimiento(string);
-		void insertarEdad(double);
+		void insertarEdad(int);
 		void insertarCiudad_nacimiento(string);
 		void insertarPais_nacimiento(string);
 		void insertarCiudad(string);
@@ -140,9 +141,9 @@ class Empleado {
 
 		void insertarActividad(string);
 
-		void insertarHijo(string**);
+		//void insertarHijo(string**); No es necesario
 
-		void insertarSucursal(string);
+		void insertarSucursal(int);
 
 		bool insertarEmpleado(string*);
 		void borrarEmpleado(int);
@@ -219,7 +220,8 @@ Empleado::Empleado(){
 	cabecera->actividad_lab = "zz";
 	cabecera->tiene_hijos = 'N';
 	cabecera->num_hijos = 0;
-	cabecera->nom_sucursal = "zz";
+	cabecera->hijos = 0;
+	cabecera->nom_sucursal = 0;
 
 	cabecera->sigNombre = -1;
 	cabecera->sigApellido = -1;
@@ -236,7 +238,6 @@ Empleado::Empleado(){
 	cabecera->sigActividad = -1;
 	cabecera->sigTiene_hijos = -1;
 	cabecera->sigNum_hijos = -1;
-	cabecera->hijos = 0;
 	cabecera->sigSucursal = -1;
 	
 	arregloEmpleados[0] = cabecera; // se inserta en el arreglo
@@ -259,24 +260,57 @@ string** Empleado::getDatos(){
 // Pasar arreglo de tam 4
 bool Empleado::insertarEmpleado(string *registro){
 	datos *nuevo = new datos;
-	nuevo->nombre = registro[0];
-	nuevo->direccion = registro[1];
-	nuevo->barrio = registro[2];
+	nuevo->nombre = registro[1];
+	nuevo->apellido = registro[2];
+	nuevo->tipo_id = registro[3];
+	nuevo->num_id = atoi(registro[4].c_str());
+	nuevo->sexo = registro[5];
+	nuevo->celular = atoi(registro[6].c_str());
+	nuevo->telefono = atoi(registro[7].c_str());
+	nuevo->email = registro[8];
+	nuevo->fecha_naci = registro[9];
+	char buffer[10]; strcpy(buffer, registro[9].c_str());
+	nuevo->edad = Helper::calcularEdad(buffer);
+	nuevo->ciudad_naci = registro[10];
+	nuevo->pais_naci = registro[11];
+	nuevo->ciudad = registro[12];
+	nuevo->direccion = registro[13];
+	nuevo->barrio = registro[14];
+	nuevo->actividad_lab = registro[15];
+	nuevo->tiene_hijos = registro[16];
+	nuevo->num_hijos = atoi(registro[17].c_str());
+	nuevo->hijos = atoi(registro[18].c_str());
+	nuevo->nom_sucursal = atoi(registro[19].c_str());
 
 	if(!llena()){
 
 		arregloEmpleados[posAct] = new datos;
 		arregloEmpleados[posAct] = nuevo;
+		insertarNombre(nuevo->nombre);
+		insertarApellido(nuevo->apellido);
 
-		/*insertarNombre(nuevo->nombre);
-		insertarDireccion(nuevo->direccion);
+		insertarTipo_id(nuevo->tipo_id);
+		insertarNum_id(nuevo->num_id);
+
+		insertarSexo(nuevo->sexo);
+
+		insertarEmail(nuevo->email);
+		//insertarFecha_nacimiento(nuevo->fecha_naci); No es necesaria
+		insertarEdad(nuevo->edad);
+		insertarCiudad_nacimiento(nuevo->ciudad_naci);
+		insertarPais_nacimiento(nuevo->pais_naci);
+		insertarCiudad(nuevo->ciudad);
 		insertarBarrio(nuevo->barrio);
-		insertarNombre_gerente(nuevo->nombre_gerente);*/
+
+		insertarActividad(nuevo->actividad_lab);
+
+		insertarSucursal(nuevo->nom_sucursal);
 
 		posAct++;
+		delete nuevo;
 		return true;
 	}
-
+	delete nuevo;
 	return false;
 }
 
@@ -368,11 +402,11 @@ void Empleado::insertarNum_id(int num_id){
 	}
 }
 
-void Empleado::insertarSexo(char sexo){
+void Empleado::insertarSexo(string sexo){
 	int pos_sexo;
-	if(sexo == 'M'){
+	if(sexo == "M"){
 		pos_sexo = 0;
-	}else if(sexo == 'F'){
+	}else if(sexo == "F"){
 		pos_sexo = 1;
 	}
 
@@ -434,7 +468,7 @@ void Empleado::insertarFecha_nacimiento(string fecha_nacimiento){
 	}
 }
 
-void Empleado::insertarEdad(double edad){
+void Empleado::insertarEdad(int edad){
 	int ant = 0; // posicion anterior a la nueva
 	int sig = cabezaInformacion[2]; // posicion siguiente a la nueva
 	bool pri = true; 
@@ -564,45 +598,21 @@ void Empleado::insertarActividad(string actividad){
 
 }
 
-void Empleado::insertarHijo(string **hijo){
-
-}
-
-void Empleado::insertarSucursal(string sucursal){
-	int pos_sucursal;
-	if(sucursal == "Sucursal 1"){
-		pos_sucursal = 0;
-	}else if(sucursal == "Sucursal 2"){
-		pos_sucursal = 1;
-	}else if(sucursal == "Sucursal 3"){
-		pos_sucursal = 2;
-	}else if(sucursal == "Sucursal 4"){
-		pos_sucursal = 3;
-	}else if(sucursal == "Sucursal 5"){
-		pos_sucursal = 4;
-	}else if(sucursal == "Sucursal 6"){
-		pos_sucursal = 5;
-	}else if(sucursal == "Sucursal 7"){
-		pos_sucursal = 6;
-	}else if(sucursal == "Sucursal 8"){
-		pos_sucursal = 7;
-	}else if(sucursal == "Sucursal 9"){
-		pos_sucursal = 8;
-	}else{
-		pos_sucursal = 9;
-	}
+void Empleado::insertarSucursal(int sucursal){
+	int pos_sucursal = sucursal - 1;
 
 	int ant = 0; // posicion anterior a la nueva
 	int sig = cabezaSucursales[pos_sucursal]; // posicion siguiente a la nueva
-
 	if(sig == 0){
 		cabezaSucursales[pos_sucursal] = posAct;
 		arregloEmpleados[posAct]->sigSucursal = 0;
 	}else{
+
 		while(sig != 0){
 			ant = sig;
 			sig = arregloEmpleados[sig]->sigSucursal;
 		}
+
 
 		arregloEmpleados[ant]->sigSucursal = posAct;
 		arregloEmpleados[posAct]->sigSucursal = 0;

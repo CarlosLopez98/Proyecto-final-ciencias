@@ -8,7 +8,7 @@ class Hijo {
 	struct datos{
 		string nombre;
 		string fecha_naci;
-		int edad
+		int edad;
 
 		int sigNombre;
 		int sigEdad;
@@ -45,7 +45,7 @@ class Hijo {
 		void borrarHijo(int);
 		bool vacia();
 		bool llena();
-}
+};
 
 Hijo::Hijo(){
 	db.setArchivo("Hijos.txt");
@@ -80,9 +80,10 @@ Hijo::~Hijo(){}
 
 bool Hijo::insertarHijo(string *hijo, int cabeza=0){
 	datos *nuevo = new datos;
-	nuevo->nombre = hijo[0];
-	nuevo->fecha_naci = hijo[1];
-	nuevo->edad = Helper::calcularEdad(hijo[1]);
+	nuevo->nombre = hijo[1];
+	nuevo->fecha_naci = hijo[2];
+	char buffer[10]; strcpy(buffer, hijo[2].c_str());
+	nuevo->edad = Helper::calcularEdad(buffer);
 
 	if(!llena()){
 

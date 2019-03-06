@@ -15,7 +15,7 @@ class EmpleadoControlador {
 		void menu(string&, string&);
 		void menuRegistro(string&, string&);
 
-		void registrar();
+		void registrar(string*);
 		void actualizar();
 		void eliminar();
 };
@@ -29,6 +29,10 @@ void EmpleadoControlador::menu(string& controlador, string& accion){
 
 void EmpleadoControlador::menuRegistro(string& controlador, string& accion){
 	MenuRegistro::mostrar(controlador, accion);
+}
+
+void EmpleadoControlador::registrar(string *datos){
+	
 }
 
 #endif
