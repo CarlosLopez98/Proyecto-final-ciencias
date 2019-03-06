@@ -15,7 +15,7 @@ Header::Header(){}
 Header::~Header(){}
 
 void Header::mostrar(){
-	system("clear");
+	system("cls");
 	cout << "\tSistema de gestion de Empleados\n" << endl;
 }
 
